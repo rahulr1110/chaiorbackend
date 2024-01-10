@@ -2,6 +2,36 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const port = 4000;
+const mydata = [
+  {
+    color: "red",
+    value: "#f00",
+  },
+  {
+    color: "green",
+    value: "#0f0",
+  },
+  {
+    color: "blue",
+    value: "#00f",
+  },
+  {
+    color: "cyan",
+    value: "#0ff",
+  },
+  {
+    color: "magenta",
+    value: "#f0f",
+  },
+  {
+    color: "yellow",
+    value: "#ff0",
+  },
+  {
+    color: "black",
+    value: "#000",
+  },
+];
 app.get("/", (req, res) => {
   res.send("hello");
 });
@@ -11,7 +41,7 @@ app.get("/login", (req, res) => {
 });
 
 app.get("/youtube", (req, res) => {
-  res.send("<h2>Chai or  bvcbcvbcode</h2>");
+  res.json({ mydata });
 });
 
 app.listen(process.env.PORT, () => {
